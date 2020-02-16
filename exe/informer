@@ -1,0 +1,7 @@
+#!/usr/bin/ruby
+
+require 'informer'
+
+terms = ARGV
+
+Informer.search(terms)

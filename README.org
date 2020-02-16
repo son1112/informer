@@ -1,0 +1,25 @@
+
+*INFORMER*
+
+* Purpose
+
+  - Gather information about a code base from a keyword search
+    - acks that term in current or given directory (single or recursive)
+    - outputs relevant information to file/s
+
+** Example
+
+   ~inform cvc cvm cvv~ searches the current directory recursively for each of
+   the given arguments as strings to ~acks~ and prints information to ~inform_cvc-cvm-cvv.org~
+   in the current directory
+
+* Options   
+
+  - ~-h help~
+  - ~-o STRING specify output file~
+  
+   
+   
+* Project
+
+  [[~/ANDERSON/projects/informer]]
