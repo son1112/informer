@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    informer (0.0.3)
+    informer (0.0.13)
       colorize
       sorbet-runtime
 

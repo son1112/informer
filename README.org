@@ -13,6 +13,11 @@
    the given arguments as strings to ~acks~ and prints information to ~inform_cvc-cvm-cvv.org~
    in the current directory
 
+** Dependencies
+
+   - The Silver Searcher
+     https://github.com/ggreer/the_silver_searcher
+
 * Options   
 
   - ~-h help~
