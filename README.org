@@ -13,7 +13,7 @@
    the given arguments as strings to ~acks~ and prints information to ~inform_cvc-cvm-cvv.org~
    in the current directory
 
-* Options   
+* Options WIP 
 
   - ~-h help~
   - ~-o STRING specify output file~
