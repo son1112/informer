@@ -18,13 +18,7 @@
    - The Silver Searcher
      https://github.com/ggreer/the_silver_searcher
 
-* Options   
+* Options WIP 
 
   - ~-h help~
   - ~-o STRING specify output file~
-  
-   
-   
-* Project
-
-  [[~/ANDERSON/projects/informer]]
