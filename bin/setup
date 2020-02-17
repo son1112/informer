@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-set -euo pipefall
+# set -euo pipefall
 IFS=$'\n\t'
 set -vx
 
 bundle install
+
+
