@@ -38,5 +38,6 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency "colorize"
   spec.add_runtime_dependency "sorbet-runtime"
+  spec.add_runtime_dependency "org-ruby"
 end
 

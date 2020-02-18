@@ -1,5 +1,6 @@
 require 'informer/report/record'
 require 'informer/report/org'
+require 'org-ruby'
 
 module Informer
   class Report < Record
@@ -22,6 +23,14 @@ module Informer
       else
         super
       end
+    end
+
+    def html_formatted_results
+      Orgmode::Parser.new(formatted_results).to_html
+    end
+
+    def markdown_formatted_results
+      Orgmode::Parser.new(formatted_results).to_markdown
     end
 
     def filename

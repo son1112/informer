@@ -12,9 +12,6 @@ module Informer
     end
 
     def search
-      # TODO: add results for -g PATTERN (print filenames matching pattern)
-      # TODO: handle multiple search terms (man ag -> --parallel)
-
       title_search.split("\x00").map do |title|
         title_contents = title.split(":")
         filepath = title_contents.first
@@ -38,13 +35,15 @@ module Informer
 
     def content_search(path = ".")
       begin
-        `#{search_command} #{@term} #{path}`.force_encoding('UTF-8').split("\n")
-      rescue => e
-        byebug
+        `#{search_command} --nofilename #{@term} #{path}`.encode('UTF-8', invalid: :replace).split("\n")
+      rescue => exception
+        raise exception
       end
     end
 
     def search_command
+      # TODO: add results for -g PATTERN (print filenames matching pattern)
+      # TODO: handle multiple search terms (man ag -> --parallel)
       "#{@searcher} #{@options}"
     end
   end

@@ -11,10 +11,11 @@ module Informer
     def format
       @results.map do |result|
         <<~TEXT
-        * #{result[:title]}
-        LINE NUMBER: #{result[:line_number]}
+        * TODO #{result[:title]}:#{result[:line_number]}
 
-        #{result[:contents].join("\n")}
+          #+BEGIN_SRC text
+          #{result[:contents].join("\n")}
+          #+END_SRC
         TEXT
       end.join("\n")
     end
