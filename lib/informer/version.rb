@@ -1,4 +1,4 @@
 
 module Informer
-  VERSION = '0.2.20'
+  VERSION = '0.3.4'
 end

@@ -1,0 +1,6 @@
+#!/usr/bin/ruby
+
+puts "Prepare to be informed!"
+`informer #{ARGV.join(' ')} &`
+
+
