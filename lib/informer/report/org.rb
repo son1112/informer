@@ -13,6 +13,8 @@ module Informer
         <<~TEXT
         * TODO #{result[:title]}:#{result[:line_number]}
 
+          [[#{result[:directory]}/#{result[:title]}::#{result[:line_number]}]]
+
           #+BEGIN_SRC text
           #{result[:contents].join("\n")}
           #+END_SRC

@@ -34,7 +34,8 @@ module Informer
     end
 
     def filename
-      @term.to_s + '_' + super
+      # @term.to_s + '_' + super
+      super + @term.to_s
     end
 
     def extension

@@ -4,6 +4,7 @@ module Informer
       File.open(filepath, 'w') do |file|
         file.write(formatted_results)
       end
+
       File.open(html_filepath, 'w') do |file|
         file.write(html_formatted_results)
       end
@@ -24,7 +25,13 @@ module Informer
     end
 
     def filename
-      Time.now.strftime("%d%m%Y-%k_%M")
+      year = Time.now.year
+      month = Time.now.month
+      day = Time.now.day
+      hour = Time.now.hour
+      minute = Time.now.min
+
+      "#{year}-#{month}-#{day}-#{hour}#{minute}-"
     end
 
     def filepath

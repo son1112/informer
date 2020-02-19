@@ -18,6 +18,7 @@ module Informer
         line_number = title_contents.last
 
         @results << {
+          directory: Dir.pwd.to_s.gsub(' ',''),
           title: filepath,
           line_number: line_number,
           contents: content_search(filepath)
@@ -34,11 +35,7 @@ module Informer
     end
 
     def content_search(path = ".")
-      begin
-        `#{search_command} --nofilename #{@term} #{path}`.encode('UTF-8', invalid: :replace).split("\n")
-      rescue => exception
-        raise exception
-      end
+      `#{search_command} --nofilename #{@term} #{path}`.encode('UTF-8', invalid: :replace).split("\n")
     end
 
     def search_command
