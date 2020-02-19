@@ -25,13 +25,8 @@ module Informer
     end
 
     def filename
-      year = Time.now.year
-      month = Time.now.month
-      day = Time.now.day
-      hour = Time.now.hour
-      minute = Time.now.min
-
-      "#{year}-#{month}-#{day}-#{hour}#{minute}-"
+      datetime = Time.now.strftime("%Y-%m-%d-%H%M")
+      "#{datetime}-#{Dir.pwd.to_s.gsub('/','_')}-"
     end
 
     def filepath

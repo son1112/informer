@@ -8,7 +8,7 @@ terms = ARGV
 search_results = Informer.search(terms)
 
 search_results.each do |term, filepaths|
-  system("emacsclient -c #{filepaths[:org_filepath]}")
+  system("emacsclient -c #{filepaths[:org_filepath]} &")
 end
 
 
