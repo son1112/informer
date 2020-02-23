@@ -1,6 +1,7 @@
 #!/usr/bin/ruby
 
 puts "Prepare to be informed!"
+# `informer #{ARGV.join(' ')} > /dev/null 2>&1`
 `informer #{ARGV.join(' ')} &`
 
 

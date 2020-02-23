@@ -8,7 +8,7 @@ module Informer
       @searcher = searcher
       @options = options
       @term = term
-      @results = []
+      @results = { term: @term, items: [] }
     end
 
     def search
@@ -17,7 +17,7 @@ module Informer
         filepath = title_contents.first
         line_number = title_contents.last
 
-        @results << {
+        @results[:items] << {
           directory: Dir.pwd.to_s.gsub(' ',''),
           title: filepath,
           line_number: line_number,

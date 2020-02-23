@@ -7,8 +7,10 @@ terms = ARGV
 
 search_results = Informer.search(terms)
 
-search_results.each do |term, filepaths|
-  system("emacsclient -c #{filepaths[:org_filepath]} &")
+search_results.each do |term, filepath|
+  # TODO: genericize to default editor
+  puts "Opening file for #{term} search: #{filepath}"
+  system("emacsclient -c #{filepath} &")
 end
 
 

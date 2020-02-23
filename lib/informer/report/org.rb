@@ -9,7 +9,7 @@ module Informer
     end
 
     def format
-      @results.map do |result|
+      org_results = @results[:items].map do |result|
         <<~TEXT
         * TODO #{result[:title]}:#{result[:line_number]}
 
@@ -19,7 +19,10 @@ module Informer
           #{result[:contents].join("\n")}
           #+END_SRC
         TEXT
-      end.join("\n")
+      end
+
+      org_results.prepend("*#{@results[:term]}*")
+      org_results.join("\n")
     end
   end
 end

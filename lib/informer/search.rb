@@ -10,19 +10,13 @@ module Informer
       results = Informer::Searcher.search(term)
 
       # TODO: rename filepath to reflect org
-      filepath, html_filepath, markdown_filepath = Informer::Report.construct_using(term, results, TYPE)
+      report = Informer::Report.construct_using(term, results, TYPE)
+      filepath = report.record
 
-      result_filepaths = {
-        org_filepath: filepath,
-        html_filepath: html_filepath,
-        markdown_filepath: markdown_filepath
-      }
-
-      search_results[term.to_sym] = result_filepaths
+      # TODO: handle multiple types
+      search_results[term.to_sym] = filepath
 
       puts "Search results for #{term} written to #{filepath}"
-      puts "Search results for #{term} written to #{html_filepath}"
-      puts "Search results for #{term} written to #{markdown_filepath}"
     end
 
     return search_results

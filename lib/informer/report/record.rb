@@ -5,22 +5,10 @@ module Informer
         file.write(formatted_results)
       end
 
-      File.open(html_filepath, 'w') do |file|
-        file.write(html_formatted_results)
-      end
-
-      File.open(markdown_filepath, 'w') do |file|
-        file.write(markdown_formatted_results)
-      end
-
-      [filepath, html_filepath, markdown_filepath]
+      filepath
     end
 
     def formatted_results
-      results
-    end
-
-    def html_formatted_results
       results
     end
 
